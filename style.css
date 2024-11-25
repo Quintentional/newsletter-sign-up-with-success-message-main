@@ -1,0 +1,309 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    background-color: hsl(234, 29%, 20%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#layout {
+    background-color: hsl(0, 0%, 100%);
+    width: 58rem;
+    height: 40rem;
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#layout-flex {
+    width: 55rem;
+    height: 37rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#content {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 2.5rem;
+}
+
+h1 {
+    font-size: 55px;
+    color: hsl(234, 29%, 20%);
+    margin: 3rem 0 1.5rem 0;
+}
+
+.content-p {
+    font-weight: 500;
+}
+
+#join {
+    width: 23rem;
+    line-height: 1.5rem;
+    margin-bottom: 1.75rem;
+}
+
+.list {
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+.list-icon {
+    margin-right: 1rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+#label-error-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#email-label {
+    font-size: 12px;
+    font-weight: 700;
+    margin: 1.75rem 0 .75rem 0;
+}
+
+#error {
+    font-size: 12px;
+    font-weight: 700;
+    color: hsl(4, 100%, 67%);
+    margin: 1.75rem 4rem .75rem 0;
+    display: none;
+}
+
+#email {
+    width: 23.5rem;
+    height: 3.5rem;
+    border-radius: 7px;
+    border: 1px solid hsla(231, 7%, 60%, 0.438);
+    color:hsl(231, 7%, 60%);
+    font-size: 16px;
+    font-weight: 400;
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+#email::placeholder {
+    color:hsl(231, 7%, 60%);
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+#email:hover, #email:focus {
+    cursor: pointer;
+    outline: none;
+    border: 1px solid hsl(234, 29%, 20%);
+}
+
+#email.errored {
+    border: 1px solid hsl(4, 100%, 67%);
+    background-color: hsla(4, 100%, 67%, 0.13);
+    color: hsl(4, 100%, 67%);
+}
+
+#form-button {
+    width: 23.5rem;
+    height: 3.5rem;
+    border: none;
+    border-radius: 7px;
+    background-color: hsl(234, 29%, 20%);
+    color: hsl(0, 0%, 100%);
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: .4px;
+}
+
+#form-button:hover {
+    cursor: pointer;
+    background: linear-gradient(to right, hsl(347, 100%, 67%), hsl(4, 100%, 67%));
+    box-shadow: 0 15px 25px 5px rgba(255, 0, 0, 0.26);
+}
+
+#mobile-img {
+    display: none;
+}
+/* ------------------------------------------------------Success State-------------------------------------------------------------- */
+
+#success {
+    width: 31.5rem;
+    height: 32.5rem;
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 30px;
+    display: none;
+    flex-direction: column;
+}
+
+#icon-success {
+    margin: 3rem 0 2.5rem 4rem;
+}
+
+h2 {
+    font-size: 55px;
+    font-weight: 700;
+    color: hsl(234, 29%, 20%);
+    line-height: 3.25rem;
+    margin: 0 0 1.5rem 4rem;
+}
+
+#success-p {
+    width: 23rem;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5rem;
+    color: hsl(234, 29%, 20%);
+    margin: 0 0 3rem 4rem;
+}
+
+#ash {
+    font-weight: 800;
+}
+
+#success-button {
+    width: 24rem;
+    height: 3.5rem;
+    border: none;
+    border-radius: 7px;
+    background-color: hsl(234, 29%, 20%);
+    color: hsl(0, 0%, 100%);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: .5px;
+    align-self: center;
+}
+
+#success-button:hover {
+    cursor: pointer;
+    background: linear-gradient(to right, hsl(347, 100%, 67%), hsl(4, 100%, 67%));
+    box-shadow: 0 15px 25px 5px rgba(255, 0, 0, 0.26);
+}
+
+/* ----------------------------------------------------------Mobile-------------------------------------------------------------------------- */
+@media(max-width: 375px) {
+    
+    #layout {
+        background-color: hsl(0, 0%, 100%);
+        width: 375px;
+        min-height: 53.5rem;
+        border-radius: 0;
+        display: none;
+    }
+    
+    #layout-flex {
+        width: 100%;
+        height: 100%;
+        flex-direction: column-reverse;  
+    }
+
+    #desktop-img {
+        display: none;
+    }
+
+    #mobile-img {
+        display: inline-block;
+        border-radius: 0 0 15px 15px;
+        align-self: center;
+        position: relative;
+        
+    }
+    
+    #content {
+        width: 100%;
+        height: 70%;
+        display: flex;
+        flex-direction: column;
+        margin-left: 3rem;
+    }
+    
+    h1 {
+        font-size: 40px;
+        margin: 2.5rem 0 1.5rem 0;
+    }
+    
+    #join {
+        width: 19rem;
+    }
+    
+    .list {
+        width: 19rem;
+        margin-bottom: .75rem;
+        line-height: 1.5rem;
+    }
+    
+    .list-icon {
+        margin-right: 1rem;
+        width: 2rem;
+    }
+    
+    #label-error-div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    #email-label {
+        margin: 1.75rem 0 .75rem 0;
+    }
+    
+    #error {
+        margin: 1.75rem 3rem .75rem 0;
+        display: inline-block;
+    }
+    
+    #email {
+        width: 20.5rem;
+    }
+    
+    #form-button {
+        width: 20.5rem;
+    }
+    
+    #success {
+        width: 375px;
+        min-height: 50.5rem;
+        border-radius: 0;
+        display: flex;
+    }
+    
+    #icon-success {
+        margin: 9rem 0 2.5rem 2rem;
+    }
+    
+    h2 {
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 2.5rem;
+        margin: 0 0 1.5rem 2rem;
+    }
+    
+    #success-p {
+        width: 21rem;
+        margin: 0 0 16.5rem 2rem;
+    }
+    
+    
+    #success-button {
+        width: 20rem;
+    }
+}
